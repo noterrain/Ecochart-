@@ -1,0 +1,130 @@
+/**{
+  color: white;
+}*/
+
+a, a:visited {
+  color:#333;
+}
+
+#container {
+  padding-top:-10px;
+  width: 980px;
+}
+
+header {
+  padding: 10px;
+}
+
+#book-title {
+  font-family: "rooney-web", georgia, "times new roman", times, serif;
+  /*color: #555;*/
+  color: #555;
+  font-size: 2.3em;
+  text-align: center;
+
+}
+
+#text-select {
+  float:right;
+  margin-right: 10px;
+}
+
+#vis {
+  overflow: hidden;
+  position: relative;
+}
+
+#status {
+  padding:0 0 20px 20px;
+}
+
+#controls {
+  padding: 20px;
+  background-color: #eee;
+  margin: 10px;
+  width: 350px;
+}
+
+#bubble-background {
+  fill: none;
+  pointer-events: all;
+}
+
+.bubble-node {
+  /* fill: #d1e0f3; */
+  /*fill: #5CC3BF ;*/
+  /*fill: #396d8a;*/
+  fill: none;
+  stroke: #396d8a;
+  stroke-width:4px;
+  /*fill: #fe57a1;*/
+}
+
+.bubble-hover {
+  /* fill: #b8c7d9; */
+  fill: #E8E9E7;
+}
+
+.bubble-selected {
+  /* fill: #a8c8ee;  */
+  fill: #CEE98F;
+  /* stroke: #6081a3; */
+  stroke: #A6BA92;
+  stroke-width: 1.5px;
+}
+
+.active {
+  color: #A6BA92;
+}
+
+a.bubble-label {
+  font-family: "rooney-web",georgia, "times new roman", times, serif;
+  color: inherit;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1em;
+  position: absolute;
+
+}
+
+
+.bubble-label .bubble-label-value {
+  font: 11px sans-serif;
+  white-space: nowrap;
+}
+
+footer p {
+  text-align: center;
+  padding-top:20px;
+  padding-bottom:20px;
+  font: 13px sans-serif;
+}
+
+h1 h2{
+  font-family: "rooney-web";
+  font-weight: 300;
+}
+
+body {
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, red, yellow); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, red, yellow); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, red, yellow); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #8DC6D8, #CE97DF, #FFB367); /* Standard syntax */
+}
+
+/* for the dark color */
+body {
+  background:linear-gradient(to top left, #4cddff, #3b9aca 10%, #2d6ca5 20%, #2a5291 27%, #283d81 35%, #222654 50%, #1e1635 63%, #0c0010 93%, #000)
+}
+
+body{
+background: -webkit-radial-gradient(closest-corner, rgba(16, 47, 70, 0) 60%, rgba(16, 47, 70, .26)), -webkit-linear-gradient(108deg, #26d0ce, #1a2980 90%);
+}
+
+body {
+  background:linear-gradient(to left, #54B1CD, #4fa6d7 15%, #4fa7d3 25%, #52add2 37%, #54b1ce 45%, #54b0c5 55%, #59bec3 70%, #5CC3BF)
+}
+
