@@ -182,7 +182,7 @@ Bubbles = () ->
     node.enter()
       .append("a")
       .attr("class", "bubble-node")
-      .attr("xlink:href", (d) -> "##{encodeURIComponent(idValue(d))}")
+      .attr("xlink:href", (d) -> "http://www.w3schools.com")
       .call(force.drag)
       .call(connectEvents)
       .append("circle")
@@ -204,7 +204,7 @@ Bubbles = () ->
     # is easier to append multiple elements to this selection
     labelEnter = label.enter().append("a")
       .attr("class", "bubble-label")
-      .attr("href", (d) -> "##{encodeURIComponent(idValue(d))}")
+      .attr("href", (d) -> "http://www.w3schools.com")
       .call(force.drag)
       .call(connectEvents)
 
