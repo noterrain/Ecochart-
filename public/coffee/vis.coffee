@@ -15,7 +15,7 @@ Bubbles = () ->
 
   # this scale will be used to size our bubbles
   rScale = d3.scale.sqrt().range([0,maxRadius])
-  
+
   # I've abstracted the data value used to size each
   # into its own function. This should make it easy
   # to switch out the underlying dataset
@@ -29,7 +29,7 @@ Bubbles = () ->
   idValue = (d) -> d.name
 
   # function to define what to display in each bubble
-  #  again, abstracted to ease migration to 
+  #  again, abstracted to ease migration to
   #  a different dataset if desired
   textValue = (d) -> d.name
 
@@ -68,7 +68,7 @@ Bubbles = () ->
   # ---
   tick = (e) ->
     dampenedAlpha = e.alpha * 0.1
-    
+
     # Most of the work is done by the gravity and collide
     # functions.
     node
@@ -94,7 +94,7 @@ Bubbles = () ->
   # ---
   # Creates new chart function. This is the 'constructor' of our
   #  visualization
-  # Check out http://bost.ocks.org/mike/chart/ 
+  # Check out http://bost.ocks.org/mike/chart/
   #  for a explanation and rational behind this function design
   # ---
   chart = (selection) ->
@@ -112,7 +112,7 @@ Bubbles = () ->
       svgEnter = svg.enter().append("svg")
       svg.attr("width", width + margin.left + margin.right )
       svg.attr("height", height + margin.top + margin.bottom )
-      
+
       # node will be used to group the bubbles
       node = svgEnter.append("g").attr("id", "bubble-nodes")
         .attr("transform", "translate(#{margin.left},#{margin.top})")
@@ -124,9 +124,9 @@ Bubbles = () ->
         .attr("height", height)
         .on("click", clear)
 
-      # label is the container div for all the labels that sit on top of 
+      # label is the container div for all the labels that sit on top of
       # the bubbles
-      # - remember that we are keeping the labels in plain html and 
+      # - remember that we are keeping the labels in plain html and
       #  the bubbles in svg
       label = d3.select(this).selectAll("#bubble-labels").data([data])
         .enter()
@@ -135,7 +135,7 @@ Bubbles = () ->
 
       update()
 
-      # see if url includes an id already 
+      # see if url includes an id already
       hashchange()
 
       # automatically call hashchange when the url has changed
@@ -150,7 +150,7 @@ Bubbles = () ->
     # add a radius to our data nodes that will serve to determine
     # when a collision has occurred. This uses the same scale as
     # the one used to size our bubbles, but it kicks up the minimum
-    # size to make it so smaller bubbles have a slightly larger 
+    # size to make it so smaller bubbles have a slightly larger
     # collision 'sphere'
     data.forEach (d,i) ->
       d.forceR = Math.max(minCollisionRadius, rScale(rValue(d)))
@@ -172,7 +172,7 @@ Bubbles = () ->
     # idValue returns
     node = node.selectAll(".bubble-node").data(data, (d) -> idValue(d))
 
-    # we don't actually remove any nodes from our data in this example 
+    # we don't actually remove any nodes from our data in this example
     # but if we did, this line of code would remove them from the
     # visualization as well
     node.exit().remove()
@@ -182,7 +182,7 @@ Bubbles = () ->
     node.enter()
       .append("a")
       .attr("class", "bubble-node")
-      .attr("xlink:href", (d) -> "http://www.w3schools.com")
+      .attr("href", (d) -> d.url)
       .call(force.drag)
       .call(connectEvents)
       .append("circle")
@@ -193,18 +193,19 @@ Bubbles = () ->
   # to work well with the font size
   # ---
   updateLabels = () ->
-    # as in updateNodes, we use idValue to define what the unique id for each data 
+    # as in updateNodes, we use idValue to define what the unique id for each data
     # point is
     label = label.selectAll(".bubble-label").data(data, (d) -> idValue(d))
 
     label.exit().remove()
 
     # labels are anchors with div's inside them
-    # labelEnter holds our enter selection so it 
+    # labelEnter holds our enter selection so it
     # is easier to append multiple elements to this selection
     labelEnter = label.enter().append("a")
       .attr("class", "bubble-label")
-      .attr("href", (d) -> "http://www.w3schools.com")
+      .attr("href", (d) -> d.url)
+      .attr("target", "_blank")
       .call(force.drag)
       .call(connectEvents)
 
@@ -218,7 +219,7 @@ Bubbles = () ->
 
     # label font size is determined based on the size of the bubble
     # this sizing allows for a bit of overhang outside of the bubble
-    # - remember to add the 'px' at the end as we are dealing with 
+    # - remember to add the 'px' at the end as we are dealing with
     #  styling divs
     label
       .style("font-size", (d) -> Math.max(14, rScale(rValue(d) / 2) - 24) + "px")
@@ -239,8 +240,8 @@ Bubbles = () ->
     # reset the width of the label to the actual width
     label
       .style("width", (d) -> d.dx + "px")
-  
-    # compute and store each nodes 'dy' value - the 
+
+    # compute and store each nodes 'dy' value - the
     # amount to shift the label down
     # 'this' inside of D3's each refers to the actual DOM element
     # connected to the data node
@@ -285,7 +286,7 @@ Bubbles = () ->
           y = d.y - d2.y
           distance = Math.sqrt(x * x + y * y)
           # find current minimum space between two nodes
-          # using the forceR that was set to match the 
+          # using the forceR that was set to match the
           # visible radius of the nodes
           minDistance = d.forceR + d2.forceR + collisionPadding
 
@@ -306,7 +307,7 @@ Bubbles = () ->
   # adds mouse events to element
   # ---
   connectEvents = (d) ->
-    d.on("click", click)
+    #d.on("click", click)
     d.on("mouseover", mouseover)
     d.on("mouseout", mouseout)
 
@@ -319,9 +320,9 @@ Bubbles = () ->
   # ---
   # changes clicked bubble by modifying url
   # ---
-  click = (d) ->
-    location.replace("#" + encodeURIComponent(idValue(d)))
-    d3.event.preventDefault()
+  #click = (d) ->
+  #  location.replace("#" + encodeURIComponent(idValue(d)))
+  #  d3.event.preventDefault()
 
   # ---
   # called when url after the # changes
@@ -333,13 +334,7 @@ Bubbles = () ->
   # ---
   # activates new node
   # ---
-  updateActive = (id) ->
-    node.classed("bubble-selected", (d) -> id == idValue(d))
-    # if no node is selected, id will be empty
-    if id.length > 0
-      d3.select("#status").html("<h3>The word <span class=\"active\">#{id}</span> is now active</h3>")
-    else
-      d3.select("#status").html("<h3>No word is active</h3>")
+
 
   # ---
   # hover event
@@ -389,7 +384,7 @@ Bubbles = () ->
       return rValue
     rValue = _
     chart
-  
+
   # final act of our main function is to
   # return the chart function we have created
   return chart
@@ -456,4 +451,3 @@ $ ->
 
   # load our data
   d3.csv("data/#{text.file}", display)
-

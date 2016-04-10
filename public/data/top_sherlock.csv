@@ -1,12 +1,12 @@
-"name","word","count"
-"CO2","CO2",5
-"toilet paper","toilet paper",1
-"Jennifer Lawrence","Jennifer Lawrence",100
-"uber","uber",8
-"carbon footprint","carbon footprint",0
-"Shell","Shell",20
-"Nasa","Nasa",7
-"Ferguson","Ferguson",3
-"Soap","Soap",5
-"Oil","Oil",29
-"Unemployment","Unemployment",29
+"name","word","count","url"
+"CO2","CO2",5,"http://www.linkedin.com"
+"toilet paper","toilet paper",1,"http://www.google.com"
+"Jennifer Lawrence","Jennifer Lawrence",100,"http://www.baidu.com"
+"uber","uber",8,"http://www.alibaba.com"
+"carbon footprint","carbon footprint",0,"http://www.spotify.com"
+"Shell","Shell",20,"http://www.square.com"
+"Nasa","Nasa",7,"http://www.w3schools.com"
+"Ferguson","Ferguson",3,"http://www.w3schools.com"
+"Soap","Soap",5,"http://www.w3schools.com"
+"Oil","Oil",29,"http://www.w3schools.com"
+"Unemployment","Unemployment",29,"http://www.w3schools.com"
