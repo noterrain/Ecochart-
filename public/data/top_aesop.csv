@@ -1,22 +1,21 @@
-name,count
-Climate Change,305000
-Sustainable Technology,198000
-Sustainability,183000
-Earth Science,166000
-Environmentalism,117000
-Energy Efficiency,102000
-Weather,98000
-Recycling,92000
-Environmental Science,83000
-Agriculture,83000
-Plastic,53000
-Permaculture,45000
-Energy Sustainability,45000
-Environmental Economics,41000
-Corporate Social Responsibility,34000
-Carbon Footprint,33000
-Sustainable Architecture,24000
-Alternative Energy,19000
-Air Pollution,13000
-Carbon Dioxide,11000
-
+name,count,url
+Climate Change,305000,https://www.quora.com/topic/Climate-Change
+Sustainable Technology,198000,https://www.quora.com/topic/Sustainable-Technology
+Sustainability,183000,https://www.quora.com/topic/Sustainability
+Earth Science,166000,https://www.quora.com/topic/Earth-Science
+Environmentalism,117000,https://www.quora.com/topic/Environmentalism
+Energy Efficiency,102000,https://www.quora.com/topic/Energy-Efficiency
+Weather,98000,https://www.quora.com/topic/Weather
+Recycling,92000,https://www.quora.com/topic/Recycling
+Environmental Science,83000,https://www.quora.com/topic/Environmental-Science
+Agriculture,83000,https://www.quora.com/topic/Agriculture
+Plastic,53000,https://www.quora.com/topic/Plastic
+Permaculture,45000,https://www.quora.com/topic/Permaculture
+Energy Sustainability,45000,https://www.quora.com/topic/Energy-Sustainability
+Environmental Economics,41000,https://www.quora.com/topic/Environmental-Economics
+Corporate Social Responsibility,34000,https://www.quora.com/topic/Corporate-Social-Responsibility
+Carbon Footprint,33000,https://www.quora.com/topic/Carbon-Footprint
+Sustainable Architecture,24000,https://www.quora.com/topic/Sustainable-Architecture
+Alternative Energy,19000,https://www.quora.com/topic/Alternative-Energy
+Air Pollution,13000,https://www.quora.com/topic/Air-Pollution
+Carbon Dioxide,11000,https://www.quora.com/topic/Carbon-Dioxide
