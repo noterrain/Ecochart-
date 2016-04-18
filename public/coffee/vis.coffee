@@ -440,12 +440,24 @@ $ ->
 
   # bind change in drop down to change the
   # search url and reset the hash url
-  d3.select("#text-select")
-    .on "change", (e) ->
-      key = $(this).val()
+
+
+  $("nav").on "click","a#first", ->
+    key = "sherlock"
+    location.replace("#")
+    location.search = encodeURIComponent(key)
+    console.log("first")
+
+  $("nav").on "click","a#second", ->
+      key = "aesop"
       location.replace("#")
       location.search = encodeURIComponent(key)
+      console.log("second")
 
+        # _link = $(this).attr("href");
+        # history.pushState(null, null, _link);
+        # loadContent(_link);
+        # return false;
   # set the book title from the text name
   d3.select("#book-title").html(text.name)
 
