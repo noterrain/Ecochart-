@@ -18,7 +18,8 @@ header {
 #book-title {
   font-family: "Source Sans Pro",Arial,sans-serif;
   color: #555;
-  font-size: 2.3em;
+  font-size: 1.6em;
+  font-weight: lighter;
   text-align: center;
 
 }
@@ -103,7 +104,7 @@ footer p {
 
 h1 h2{
   font-family: "Source Sans Pro",Arial,sans-serif;
-  font-weight: 300;
+  font-weight:lighter;
   color: white;
   text-align: center;
 }
@@ -131,14 +132,19 @@ body {
 
 /* some changes based on the bootstrap*/
 
-/*ul {
-    list-style-image: url('./images/quora-128.png');
-    width:50%;
-    margin:0 auto;
-}*/
-
 
 .navbar .nav {
     position: absolute;
     left:44%;
+}
+
+
+.navbar {
+    margin-bottom: 92px;
+}
+
+
+li {
+  border-color: #ff5831;
+  border-bottom: 3px solid #fff;
 }

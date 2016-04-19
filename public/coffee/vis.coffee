@@ -400,8 +400,8 @@ root.plotData = (selector, data, plot) ->
     .call(plot)
 
 texts = [
-  {key:"sherlock",file:"top_sherlock.csv",name:"The Adventures of Sherlock Holmes"}
-  {key:"aesop",file:"top_aesop.csv",name:"Aesop's Fables"}
+  {key:"sherlock",file:"top_sherlock.csv",name:"we look into google trends keywords ranking to analysis people’s interest compare to CO2"}
+  {key:"aesop",file:"top_aesop.csv",name:"We look into Quora’s most followed topics around “CO2” and “Climate Chage”, hope this can help you chose tags on Quora. "}
   {key:"alice",file:"alice.csv",name:"Alice's Adventures in Wonderland"}
   {key:"gulliver",file:"top_gulliver.csv",name:"Gulliver's Travels"}
 ]
