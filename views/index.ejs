@@ -32,13 +32,13 @@
 
     <nav class="navbar navbar-default">
       <ul class="nav navbar-nav">
-          <li><a id="first" href="#"><img src="./images/new-google-favicon-logo.png" ></a></li>
-          <li><a id="second" href="#"><img src="./images/quora-128.png" ></a></li>
+          <li><a href="#"><img src="./images/new-google-favicon-logo.png" ></a></li>
+          <li><a href="#"><img src="./images/quora-128.png" ></a></li>
       </ul>
     </nav>
 
     <div class="row">
-      <div class ="span8 offset2">
+      <div class ="span8 offset4">
         <h2 id="book-title"></h2>
       </div>
     </div>
@@ -62,8 +62,19 @@
 	  <script src="js/libs/coffee-script.js"></script>
 	  <script src="js/libs/d3.min.js"></script>
 	  <script type="text/coffeescript" src="./coffee/vis.coffee"></script>
-	  <script type="text/javascript">
-	  </script>
+	  <script src="js/libs/jquery-1.7.2.min.js"></script>
+    <!-- <script>
+    $(document).ready(function() {
+      $("li").click(function () {
 
+          console.log("1111");
+          $("li").removeClass("active");
+          console.log("AAAA");
+          // $(".tab").addClass("active"); // instead of this do the below
+          $(this).addClass("active");
+          console.log("BBBB");
+        });
+    });
+   </script> -->
   </body>
 </html>

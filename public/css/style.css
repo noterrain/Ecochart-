@@ -3,12 +3,13 @@
 }*/
 
 a, a:visited {
-  color:#333;
+  color:#FFF;
+  font-weight: 100;
 }
 
 #container {
   padding-top:-10px;
-  width: 980px;
+  width: 1280px;
 }
 
 header {
@@ -17,10 +18,13 @@ header {
 
 #book-title {
   font-family: "Source Sans Pro",Arial,sans-serif;
-  color: #555;
+  color: #FFF;
   font-size: 1.6em;
+  font-style: italic;
   font-weight: lighter;
   text-align: center;
+  margin-top: 10px;
+  margin-bottom: -40px;
 
 }
 
@@ -51,24 +55,17 @@ header {
 }
 
 .bubble-node {
-  /* fill: #d1e0f3; */
-  /*fill: #5CC3BF ;*/
-  /*fill: #396d8a;*/
-  fill: none;
-  stroke: #396d8a;
-  stroke-width:4px;
-  /*fill: #fe57a1;*/
+  fill: #386d8a;
+  stroke: #FFF;
+  stroke-width:1px;
 }
 
 .bubble-hover {
-  /* fill: #b8c7d9; */
-  fill: #E8E9E7;
+  fill: #2bafe9;
 }
 
 .bubble-selected {
-  /* fill: #a8c8ee;  */
   fill: #CEE98F;
-  /* stroke: #6081a3; */
   stroke: #A6BA92;
   stroke-width: 1.5px;
 }
@@ -79,30 +76,40 @@ header {
 
 a.bubble-label {
   font-family: "Source Sans Pro",Arial,sans-serif;
-  color: inherit;
+  color: white;
   cursor: pointer;
   display: block;
   text-align: center;
   text-decoration: none;
   line-height: 1em;
   position: absolute;
+  font-weight: 100;
 
 }
 
 
 .bubble-label .bubble-label-value {
-  font: 11px sans-serif;
+  font: 11px "Source Sans Pro",Arial,sans-serif;
+  font-weight: lighter;
   white-space: nowrap;
 }
 
+footer {
+  margin-top: -20px;
+  color: #FFF;
+}
 footer p {
   text-align: center;
-  padding-top:20px;
   padding-bottom:20px;
   font: 13px sans-serif;
 }
+footer a {
+  color: #FFF;
+  font-weight: 100;
+}
 
-h1 h2{
+
+header h1,h2{
   font-family: "Source Sans Pro",Arial,sans-serif;
   font-weight:lighter;
   color: white;
@@ -147,4 +154,12 @@ body {
 li {
   border-color: #ff5831;
   border-bottom: 3px solid #fff;
+}
+
+/*li:hover {
+  border-bottom: 3px solid #ff4000;
+}*/
+li.active {
+  border-bottom: 3px solid #ff4000;
+  background-color: #555;
 }

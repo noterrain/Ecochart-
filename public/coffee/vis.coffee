@@ -4,17 +4,18 @@ root = exports ? this
 Bubbles = () ->
   # standard variables accessible to
   # the rest of the functions inside Bubbles
-  width = 980
+  width = 1280
   height = 510
   data = []
   node = null
   label = null
   margin = {top: 5, right: 0, bottom: 0, left: 0}
   # largest size for our bubbles
-  maxRadius = 80
+  maxRadius = 85
 
   # this scale will be used to size our bubbles
-  rScale = d3.scale.sqrt().range([0,maxRadius])
+  #rScale = d3.scale.sqrt().range([0,maxRadius])
+  rScale = d3.scale.sqrt().range([20,maxRadius])
 
   # I've abstracted the data value used to size each
   # into its own function. This should make it easy
@@ -120,8 +121,8 @@ Bubbles = () ->
       # clickable background rect to clear the current selection
       node.append("rect")
         .attr("id", "bubble-background")
-        .attr("width", width)
-        .attr("height", height)
+        .attr("width", width+200)
+        .attr("height", height+200)
         .on("click", clear)
 
       # label is the container div for all the labels that sit on top of
@@ -222,7 +223,7 @@ Bubbles = () ->
     # - remember to add the 'px' at the end as we are dealing with
     #  styling divs
     label
-      .style("font-size", (d) -> Math.max(14, rScale(rValue(d) / 2) - 24) + "px")
+      .style("font-size", (d) -> Math.max(14, rScale(rValue(d) / 2) - 28) + "px")
       .style("width", (d) -> 2.5 * rScale(rValue(d)) + "px")
 
     # interesting hack to get the 'true' text width
@@ -442,17 +443,19 @@ $ ->
   # search url and reset the hash url
 
 
-  $("nav").on "click","a#first", ->
+  $("nav").on "click","li:nth-child(1)", ->
     key = "sherlock"
     location.replace("#")
     location.search = encodeURIComponent(key)
-    console.log("first")
+    $("li").removeClass("active")
+    $(this).addClass("active")
 
-  $("nav").on "click","a#second", ->
+  $("nav").on "click","li:nth-child(2)", ->
       key = "aesop"
       location.replace("#")
       location.search = encodeURIComponent(key)
-      console.log("second")
+      $("li").removeClass("active")
+      $(this).addClass("active")
 
         # _link = $(this).attr("href");
         # history.pushState(null, null, _link);
