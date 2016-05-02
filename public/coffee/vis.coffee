@@ -427,11 +427,13 @@ $ ->
   text = texts.filter((t) -> t.key == key)[0]
 
   # default to the first text if something gets messed up
+
   if !text
     text = texts[0]
 
+  $("."+key).addClass("active")
   # select the current text in the drop-down
-  $("#text-select").val(key)
+
 
   # bind change in jitter range slider
   # to update the plot's jitter
@@ -447,15 +449,13 @@ $ ->
     key = "sherlock"
     location.replace("#")
     location.search = encodeURIComponent(key)
-    $("li").removeClass("active")
-    $(this).addClass("active")
+
 
   $("nav").on "click","li:nth-child(2)", ->
       key = "aesop"
       location.replace("#")
       location.search = encodeURIComponent(key)
-      $("li").removeClass("active")
-      $(this).addClass("active")
+
 
         # _link = $(this).attr("href");
         # history.pushState(null, null, _link);
