@@ -125,6 +125,7 @@ Bubbles = () ->
         .attr("height", height+200)
         .on("click", clear)
 
+      $( "body" ).append("<footer><p><a href = '#url'>Data source (March. 2016)</a>|<a href ='#url'> Collaborator: Ajay Revels </a></p></footer>");
       # label is the container div for all the labels that sit on top of
       # the bubbles
       # - remember that we are keeping the labels in plain html and
@@ -428,10 +429,7 @@ $ ->
 
   # default to the first text if something gets messed up
 
-  if !text
-    text = texts[0]
-
-  $("."+key).addClass("active")
+  #$("."+key).addClass("active")
   # select the current text in the drop-down
 
 
@@ -452,9 +450,9 @@ $ ->
 
 
   $("nav").on "click","li:nth-child(2)", ->
-      key = "aesop"
-      location.replace("#")
-      location.search = encodeURIComponent(key)
+    key = "aesop"
+    location.replace("#")
+    location.search = encodeURIComponent(key)
 
 
         # _link = $(this).attr("href");
