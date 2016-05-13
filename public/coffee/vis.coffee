@@ -125,7 +125,6 @@ Bubbles = () ->
         .attr("height", height+200)
         .on("click", clear)
 
-      $( "body" ).append("<footer><p><a href = '#url'>Data source (March. 2016)</a>|<a href ='#url'> Collaborator: Ajay Revels </a></p></footer>");
       # label is the container div for all the labels that sit on top of
       # the bubbles
       # - remember that we are keeping the labels in plain html and
@@ -404,13 +403,13 @@ root.plotData = (selector, data, plot) ->
 texts = [
   {key:"sherlock",file:"top_sherlock.csv",name:"we look into google trends keywords ranking to analysis people’s interest compare to CO2"}
   {key:"aesop",file:"top_aesop.csv",name:"We look into Quora’s most followed topics around “CO2” and “Climate Chage”, hope this can help you chose tags on Quora. "}
-  {key:"alice",file:"alice.csv",name:"Alice's Adventures in Wonderland"}
-  {key:"gulliver",file:"top_gulliver.csv",name:"Gulliver's Travels"}
 ]
 
 # ---
 # jQuery document ready.
 # ---
+
+
 $ ->
   # create a new Bubbles chart
   plot = Bubbles()
@@ -425,14 +424,23 @@ $ ->
   # we are storing the current text in the search component
   # just to make things easy
   key = decodeURIComponent(location.search).replace("?","")
+  #key = decodeURIComponent(location.search).replace("?","")
   text = texts.filter((t) -> t.key == key)[0]
 
   # default to the first text if something gets messed up
+  if !text
+    text = texts[0]
 
-  #$("."+key).addClass("active")
+  if(key)
+       console.log("I am in key if else statement")
+       $("."+ key).addClass("active")
+       if(key == "aesop")
+          console.log("key == 'aesop'")
+          $(".sherlock").removeClass("active")
+
+
   # select the current text in the drop-down
-
-
+  #$("#text-select").val(key)
   # bind change in jitter range slider
   # to update the plot's jitter
   d3.select("#jitter")
@@ -442,23 +450,22 @@ $ ->
   # bind change in drop down to change the
   # search url and reset the hash url
 
+  $("footer").html("<p><a href = '#url'>Data source (March. 2016)</a> | <a href ='#url'> Collaborator: Ajay Revels </a></p>")
 
-  $("nav").on "click","li:nth-child(1)", ->
+  $("nav").on "click",".sherlock", ->
     key = "sherlock"
     location.replace("#")
     location.search = encodeURIComponent(key)
+    console.log("what is the location.search" + location.search)
+    # $("li").removeClass("active")
 
+  $("nav").on "click",".aesop", ->
+      key = "aesop"
+      location.replace("#")
+      location.search = encodeURIComponent(key)
+      console.log("what is the location.search"+location.search)
+      # $("li").removeClass("active")
 
-  $("nav").on "click","li:nth-child(2)", ->
-    key = "aesop"
-    location.replace("#")
-    location.search = encodeURIComponent(key)
-
-
-        # _link = $(this).attr("href");
-        # history.pushState(null, null, _link);
-        # loadContent(_link);
-        # return false;
   # set the book title from the text name
   d3.select("#book-title").html(text.name)
 

@@ -70,9 +70,9 @@ header {
   stroke-width: 1.5px;
 }
 
-.active {
-  color: #A6BA92;
-}
+/*.active {
+  border-bottom: #A6BA92;
+}*/
 
 a.bubble-label {
   font-family: "Source Sans Pro",Arial,sans-serif;
@@ -160,6 +160,6 @@ li {
   border-bottom: 3px solid #ff4000;
 }*/
 li.active {
-  border-bottom: 3px solid #ff4000;
-  background-color: #555;
+  border-bottom: 4px solid #386d8a;
+  /*background-color: #555;*/
 }
