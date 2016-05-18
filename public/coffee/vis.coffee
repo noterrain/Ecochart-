@@ -1,4 +1,3 @@
-
 root = exports ? this
 
 Bubbles = () ->
@@ -401,8 +400,8 @@ root.plotData = (selector, data, plot) ->
     .call(plot)
 
 texts = [
-  {key:"sherlock",file:"top_sherlock.csv",name:"we look into google trends keywords ranking to analysis people’s interest compare to CO2"}
-  {key:"aesop",file:"top_aesop.csv",name:"We look into Quora’s most followed topics around “CO2” and “Climate Chage”, hope this can help you chose tags on Quora. "}
+  {key:"google",file:"top_google.csv",name:"we look into google trends keywords ranking to analysis people’s interest compare to CO2"}
+  {key:"quora",file:"top_quora.csv",name:"We look into Quora’s most followed topics around “CO2” and “Climate Chage”, hope this can help you chose tags on Quora. "}
 ]
 
 # ---
@@ -434,9 +433,9 @@ $ ->
   if(key)
        console.log("I am in key if else statement")
        $("."+ key).addClass("active")
-       if(key == "aesop")
-          console.log("key == 'aesop'")
-          $(".sherlock").removeClass("active")
+       if(key == "quora")
+          console.log("key == 'quora'")
+          $(".google").removeClass("active")
 
 
   # select the current text in the drop-down
@@ -452,15 +451,15 @@ $ ->
 
   $("footer").html("<p><a href = '#url'>Data source (March. 2016)</a> | <a href ='#url'> Collaborator: Ajay Revels </a></p>")
 
-  $("nav").on "click",".sherlock", ->
-    key = "sherlock"
+  $("nav").on "click",".google", ->
+    key = "google"
     location.replace("#")
     location.search = encodeURIComponent(key)
     console.log("what is the location.search" + location.search)
     # $("li").removeClass("active")
 
-  $("nav").on "click",".aesop", ->
-      key = "aesop"
+  $("nav").on "click",".quora", ->
+      key = "quora"
       location.replace("#")
       location.search = encodeURIComponent(key)
       console.log("what is the location.search"+location.search)

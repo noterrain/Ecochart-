@@ -153,13 +153,18 @@ body {
 
 li {
   border-color: #ff5831;
-  border-bottom: 3px solid #fff;
+  border-bottom: 3px solid #386d8a;
 }
 
-/*li:hover {
-  border-bottom: 3px solid #ff4000;
-}*/
+
 li.active {
-  border-bottom: 4px solid #386d8a;
+  border-bottom: 4px solid white;
   /*background-color: #555;*/
+}
+
+a[href="https://www.google.com/trends/explore#q=climate%20change%20"] circle {
+  fill: #99FFB3;
+}
+.bubble-label[href="https://www.google.com/trends/explore#q=climate%20change%20"]{
+  color: black;
 }
